@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6tdi5sc78bkb"]
+
+[ext_resource type="Script" path="res://test.cs" id="1_pwonp"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pwonp")
