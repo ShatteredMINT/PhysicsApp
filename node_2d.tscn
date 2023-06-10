@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwsucbvm20lvh"]
+
+[ext_resource type="PackedScene" uid="uid://cwlfwa6v1f57g" path="res://field.tscn" id="1_xac47"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Field" parent="." instance=ExtResource("1_xac47")]

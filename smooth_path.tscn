@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bypag5mwknq8j"]
+
+[ext_resource type="Script" path="res://smooth_path.cs" id="1_2djl5"]
+
+[sub_resource type="Curve2D" id="Curve2D_x7rj2"]
+resource_local_to_scene = true
+
+[node name="SmoothPath" type="Path2D"]
+curve = SubResource("Curve2D_x7rj2")
+script = ExtResource("1_2djl5")
