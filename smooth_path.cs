@@ -65,6 +65,11 @@ public partial class smooth_path : Path2D
 		if (points != null) {
 			DrawPolyline(points, Colors.Black, LineThickness, true);
 		}
+
+
+		/*for (int i = 0; i < Curve.PointCount; i++) {
+			DrawCircle(Curve.GetPointPosition(i), LineThickness, Colors.Red);
+		}*/
 	}
 
 
@@ -72,7 +77,7 @@ public partial class smooth_path : Path2D
 	{
 		Vector2 last = getPoint(index - 1);
 		Vector2 next = getPoint(index + 1);
-		Vector2 spline = last.DirectionTo(next) * SplineLength;
+		Vector2 spline = last.DirectionTo(next) * Mathf.Max(SplineLength * ((next - last).Length() / 100), 5);
 		return spline;
 	}
 
