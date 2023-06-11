@@ -8,3 +8,4 @@ resource_local_to_scene = true
 [node name="SmoothPath" type="Path2D"]
 curve = SubResource("Curve2D_x7rj2")
 script = ExtResource("1_2djl5")
+SplineLength = 20
