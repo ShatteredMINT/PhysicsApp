@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bypag5mwknq8j"]
+[gd_scene load_steps=4 format=3 uid="uid://bypag5mwknq8j"]
 
 [ext_resource type="Script" path="res://smooth_path.cs" id="1_2djl5"]
+[ext_resource type="PackedScene" uid="uid://dk7wmfek2qi05" path="res://arrow.tscn" id="2_bjbku"]
 
 [sub_resource type="Curve2D" id="Curve2D_x7rj2"]
 resource_local_to_scene = true
@@ -8,4 +9,6 @@ resource_local_to_scene = true
 [node name="SmoothPath" type="Path2D"]
 curve = SubResource("Curve2D_x7rj2")
 script = ExtResource("1_2djl5")
+LineThickness = 2
 SplineLength = 20
+Arrow = ExtResource("2_bjbku")

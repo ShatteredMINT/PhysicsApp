@@ -1,7 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwsucbvm20lvh"]
 
-[ext_resource type="PackedScene" uid="uid://cwlfwa6v1f57g" path="res://field.tscn" id="1_xac47"]
+[ext_resource type="PackedScene" uid="uid://d0qw1284e8kln" path="res://coil.tscn" id="1_dh46v"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Field" parent="." instance=ExtResource("1_xac47")]
+[node name="Coil" parent="." instance=ExtResource("1_dh46v")]
+position = Vector2(352, 282)

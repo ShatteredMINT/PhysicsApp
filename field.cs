@@ -17,9 +17,6 @@ public partial class field : Node2D
 		get => _count;
 		set
 		{
-			if (_count == value)
-				return;
-
 			_count = value;
 			update();
 		}
@@ -82,7 +79,7 @@ public partial class field : Node2D
 	private void addLine(int index)
 	{
 		float yOffset = ((_size.Y / 2) / _count) * index;
-		float max = (yOffset + ((_size.Y / 2) / _count) * _thickness) * (index + 1);
+		float max = (yOffset + ((_size.Y / 2) / _count)) * (index + 1) * _thickness;
 		float xOffset = (_size.X) * (index + 0.1f) / _count;
 
 		//Top half
@@ -95,6 +92,7 @@ public partial class field : Node2D
 		line.Curve.AddPoint(new Vector2(xOffset + _size.X, -_size.Y / 5 * _thickness * 0.5f));
 		line.Curve.AddPoint(new Vector2(_size.X, yOffset));
 		line.Smooth = true;
+		line.AddArrows();
 
 		lines.Add(line);
 		AddChild(line);
@@ -109,6 +107,7 @@ public partial class field : Node2D
 		line.Curve.AddPoint(new Vector2(xOffset + _size.X, _size.Y + (_size.Y / 5 * _thickness * 0.5f)));
 		line.Curve.AddPoint(new Vector2(_size.X, _size.Y - yOffset));
 		line.Smooth = true;
+		line.AddArrows();
 
 		lines.Add(line);
 		AddChild(line);
