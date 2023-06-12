@@ -72,7 +72,7 @@ public partial class smooth_path : Path2D
 	public override void _Draw() {
 		Vector2[] points = Curve.GetBakedPoints();
 		if (points != null) {
-			DrawPolyline(points, Colors.Black, LineThickness, true);
+			DrawPolyline(points, Colors.Green, LineThickness, true);
 		}
 
 		if (ShowPoints) {

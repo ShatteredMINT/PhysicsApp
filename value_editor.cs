@@ -19,7 +19,8 @@ public partial class value_editor : VBoxContainer
 		set
 		{
 			_title = value;
-			GetNode<Label>("Label").Text = _title;
+			if (Engine.IsEditorHint())
+				GetNode<Label>("Label").Text = _title;
 		}
 	}
 
@@ -69,6 +70,8 @@ public partial class value_editor : VBoxContainer
 	{
 		GetNode<SpinBox>("SpinBox").Step = Step;
 		GetNode<HSlider>("HSlider").Step = Step;
+		
+		GetNode<Label>("Label").Text = _title;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
