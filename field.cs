@@ -67,12 +67,10 @@ public partial class field : Node2D
 		while (lines.Count > 0) {
 			lines[0].QueueFree();
 			lines.RemoveAt(0);
-			GD.Print("Removing line");
 		}
 
 		for (int i = 0; i < _count; i++) {
 			addLine(i);
-			GD.Print("Adding line " + i);
 		}
 	}
 
@@ -118,9 +116,7 @@ public partial class field : Node2D
 		while (lines.Count > 0) {
 			lines[0].QueueFree();
 			lines.RemoveAt(0);
-			GD.Print("Removing line");
 		}
-		GD.Print("freed!");
 	}
 
 	public void TreeEntered()

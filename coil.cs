@@ -63,7 +63,6 @@ public partial class coil : Node2D
 		while (sprites.Count > 0) {
 			sprites[0].QueueFree();
 			sprites.RemoveAt(0);
-			GD.Print("Removing winding");
 		}
 
 		for (int i = 0; i < _count; i++) {
@@ -80,7 +79,6 @@ public partial class coil : Node2D
 			sprites.Add(winding);
 
 			AddChild(winding);
-			GD.Print("Adding winding " + i);
 		}
 	}
 
@@ -89,7 +87,6 @@ public partial class coil : Node2D
 		while (sprites.Count > 0) {
 			sprites[0].QueueFree();
 			sprites.RemoveAt(0);
-			GD.Print("Removing winding");
 		}
 	}
 

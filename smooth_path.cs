@@ -117,8 +117,6 @@ public partial class smooth_path : Path2D
 		while (arrows.Count > 0) {
 			arrows[0].QueueFree();
 			arrows.RemoveAt(0);
-			GD.Print("Removing Arrow");
 		}
-		GD.Print("freed!");
 	}
 }

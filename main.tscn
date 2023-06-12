@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://bafpyxrk623v5"]
+
+[ext_resource type="Script" path="res://main.cs" id="1_dwn0b"]
+[ext_resource type="PackedScene" uid="uid://bggvux0yu1v0a" path="res://zoom_camera_2d.tscn" id="3_rljco"]
+[ext_resource type="PackedScene" uid="uid://d0qw1284e8kln" path="res://coil.tscn" id="4_eygdv"]
+[ext_resource type="PackedScene" uid="uid://c61kacghslurx" path="res://value_editor.tscn" id="4_wkg12"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_dwn0b")
+
+[node name="ZoomCamera2D" parent="." instance=ExtResource("3_rljco")]
+anchor_mode = 0
+
+[node name="Coil" parent="." instance=ExtResource("4_eygdv")]
+position = Vector2(400, 360)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Windings" parent="CanvasLayer" instance=ExtResource("4_wkg12")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -88.0
+offset_right = -10.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+Title = "Wicklungen"
+MaxValue = 500.0
+Value = 0.0
+
+[node name="Diameter" parent="CanvasLayer" instance=ExtResource("4_wkg12")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1120.0
+offset_top = 544.0
+offset_right = 1270.0
+offset_bottom = 625.0
+grow_horizontal = 1
+grow_vertical = 1
+Title = "Durchmesser"
+MaxValue = 1000.0
+Value = 100.0
+
+[connection signal="ChangedValue" from="CanvasLayer/Windings" to="." method="OnWindingsChanged"]
+[connection signal="ChangedValue" from="CanvasLayer/Diameter" to="." method="OnDiamaterChanged"]
