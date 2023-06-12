@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://di6gjfy0pejve"]
 
-[ext_resource type="Texture2D" uid="uid://djo21fd7bk6nk" path="res://icon.svg" id="1_l86qj"]
+[ext_resource type="Texture2D" uid="uid://dv0r6qa35gyiu" path="res://winding.png" id="1_fx7f7"]
 
 [node name="Winding" type="Sprite2D"]
-texture = ExtResource("1_l86qj")
+texture = ExtResource("1_fx7f7")
