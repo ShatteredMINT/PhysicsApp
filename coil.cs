@@ -45,6 +45,8 @@ public partial class coil : Node2D
 			update();
 
 			GetNode<field>("Field").Size = _size;
+
+			Position = new Vector2(1280 / 2 - (_size.X / 2), 720 / 2 - (_size.Y / 2));
 		}
 	}
 
@@ -93,5 +95,6 @@ public partial class coil : Node2D
 	public void TreeEntered()
 	{
 		update();
+		Position = new Vector2(1280 / 2 - (_size.X / 2), 720 / 2 - (_size.Y / 2));
 	}
 }

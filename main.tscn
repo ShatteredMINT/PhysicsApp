@@ -1,18 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bafpyxrk623v5"]
+[gd_scene load_steps=6 format=3 uid="uid://bafpyxrk623v5"]
 
 [ext_resource type="Script" path="res://main.cs" id="1_dwn0b"]
 [ext_resource type="PackedScene" uid="uid://bggvux0yu1v0a" path="res://zoom_camera_2d.tscn" id="3_rljco"]
 [ext_resource type="PackedScene" uid="uid://d0qw1284e8kln" path="res://coil.tscn" id="4_eygdv"]
 [ext_resource type="PackedScene" uid="uid://c61kacghslurx" path="res://value_editor.tscn" id="4_wkg12"]
+[ext_resource type="PackedScene" uid="uid://ru2s1gk7ej32" path="res://value_display.tscn" id="5_gra6k"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_dwn0b")
 
 [node name="ZoomCamera2D" parent="." instance=ExtResource("3_rljco")]
-anchor_mode = 0
 
 [node name="Coil" parent="." instance=ExtResource("4_eygdv")]
-position = Vector2(400, 360)
+position = Vector2(540, 310)
 Wind = null
 FieldLines = 10
 
@@ -79,5 +79,20 @@ grow_horizontal = 0
 grow_vertical = 0
 Title = "Material"
 
+[node name="FieldStrength" parent="CanvasLayer" instance=ExtResource("5_gra6k")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -160.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 48.0
+grow_horizontal = 0
+grow_vertical = 1
+Title = "Material"
+
 [connection signal="ChangedValue" from="CanvasLayer/Windings" to="." method="OnWindingsChanged"]
 [connection signal="ChangedValue" from="CanvasLayer/Diameter" to="." method="OnDiamaterChanged"]
+[connection signal="ChangedValue" from="CanvasLayer/Material" to="." method="OnMaterialChanged"]

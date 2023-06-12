@@ -24,4 +24,9 @@ public partial class main : Node2D
 	{
 		GetNode<coil>("Coil").Size = new Vector2(GetNode<coil>("Coil").Size.X, (float) value);
 	}
+
+	private void OnMaterialChanged(double value)
+	{
+		GetNode<value_display>("CanvasLayer/FieldStrength").Value = value;
+	}
 }
