@@ -72,6 +72,8 @@ public partial class value_editor : VBoxContainer
 		GetNode<HSlider>("HSlider").Step = Step;
 		
 		GetNode<Label>("Label").Text = _title;
+
+		SetValueNoSignal(_Value);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

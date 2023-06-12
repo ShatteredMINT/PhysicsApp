@@ -10,12 +10,11 @@
 script = ExtResource("1_dwn0b")
 
 [node name="ZoomCamera2D" parent="." instance=ExtResource("3_rljco")]
-MinZoom = 0.0
+MinZoom = 0.001
 MaxZoom = 10.0
 
 [node name="Coil" parent="." instance=ExtResource("4_eygdv")]
 position = Vector2(540, 310)
-FieldLines = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -33,7 +32,7 @@ grow_horizontal = 0
 grow_vertical = 0
 Title = "Wicklungen"
 MaxValue = 500.0
-Value = 0.0
+Value = 20.0
 
 [node name="Diameter" parent="CanvasLayer" instance=ExtResource("4_wkg12")]
 anchors_preset = 3
@@ -48,8 +47,9 @@ offset_bottom = -95.0
 grow_horizontal = 0
 grow_vertical = 0
 Title = "Durchmesser"
-MaxValue = 1000.0
-Value = 100.0
+MaxValue = 0.25
+Value = 0.1
+Step = 0.001
 
 [node name="Current" parent="CanvasLayer" instance=ExtResource("4_wkg12")]
 anchors_preset = 3
@@ -63,7 +63,9 @@ offset_right = -10.0
 offset_bottom = -183.0
 grow_horizontal = 0
 grow_vertical = 0
-Title = "Current"
+Title = "Strom"
+MaxValue = 10.0
+Value = 1.0
 Step = 0.01
 
 [node name="Material" parent="CanvasLayer" instance=ExtResource("4_wkg12")]
@@ -79,8 +81,29 @@ offset_bottom = -271.0
 grow_horizontal = 0
 grow_vertical = 0
 Title = "Material"
+MaxValue = 800000.0
+MinValue = 250.0
+Value = 250.0
+Step = 10.0
 
-[node name="FieldStrength" parent="CanvasLayer" instance=ExtResource("5_gra6k")]
+[node name="Length" parent="CanvasLayer" instance=ExtResource("4_wkg12")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -440.0
+offset_right = -10.0
+offset_bottom = -359.0
+grow_horizontal = 0
+grow_vertical = 0
+Title = "Spulen Länge"
+MaxValue = 1.0
+Value = 0.3
+Step = 0.001
+
+[node name="Induction" parent="CanvasLayer" instance=ExtResource("5_gra6k")]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_top = 0.0
@@ -92,8 +115,24 @@ offset_right = -8.0
 offset_bottom = 48.0
 grow_horizontal = 0
 grow_vertical = 1
-Title = "Material"
+Title = "Induktivität"
+
+[node name="FieldStrength" parent="CanvasLayer" instance=ExtResource("5_gra6k")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -128.0
+offset_top = 56.0
+offset_right = -10.0
+offset_bottom = 96.0
+grow_horizontal = 0
+grow_vertical = 1
+Title = "Feldstärke"
 
 [connection signal="ChangedValue" from="CanvasLayer/Windings" to="." method="OnWindingsChanged"]
 [connection signal="ChangedValue" from="CanvasLayer/Diameter" to="." method="OnDiamaterChanged"]
+[connection signal="ChangedValue" from="CanvasLayer/Current" to="." method="OnIChanged"]
 [connection signal="ChangedValue" from="CanvasLayer/Material" to="." method="OnMaterialChanged"]
+[connection signal="ChangedValue" from="CanvasLayer/Length" to="." method="OnLengthChanged"]
