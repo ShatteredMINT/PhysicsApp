@@ -82,8 +82,8 @@ public partial class value_editor : VBoxContainer
 	public void SetValueNoSignal(double value)
 	{
 		_Value = value;
-		GetNode<SpinBox>("SpinBox").SetValueNoSignal(_Value);
-		GetNode<HSlider>("HSlider").SetValueNoSignal(_Value);
+		GetNode<SpinBox>("SpinBox").Value = _Value;
+		GetNode<HSlider>("HSlider").Value = _Value;
 
 	}
 

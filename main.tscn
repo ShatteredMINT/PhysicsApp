@@ -10,10 +10,11 @@
 script = ExtResource("1_dwn0b")
 
 [node name="ZoomCamera2D" parent="." instance=ExtResource("3_rljco")]
+MinZoom = 0.0
+MaxZoom = 10.0
 
 [node name="Coil" parent="." instance=ExtResource("4_eygdv")]
 position = Vector2(540, 310)
-Wind = null
 FieldLines = 10
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
