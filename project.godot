@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Test"
-config/features=PackedStringArray("4.0", "C#", "Mobile")
+config/name="PhysicsApp"
+config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
