@@ -101,7 +101,7 @@ public partial class smooth_path : Path2D
 	{
 		Vector2 last = getPoint(index - 1);
 		Vector2 next = getPoint(index + 1);
-		Vector2 spline = last.DirectionTo(next) * SplineLength *  (index == 2 ? 5 : 1) * ((next - last).Length() > 600 ? 2 : 1) ;
+		Vector2 spline = last.DirectionTo(next) * SplineLength *  (index == 2 ? 3 : 1) * ((next - last).Length() > 600 ? 2 : 1);
 		return spline;
 	}
 

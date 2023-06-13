@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cwlfwa6v1f57g" path="res://field.tscn" id="3_ebb62"]
 
 [node name="Coil" type="Node2D"]
+position = Vector2(540, 310)
 script = ExtResource("1_ooell")
 Wind = ExtResource("2_hn3y0")
 

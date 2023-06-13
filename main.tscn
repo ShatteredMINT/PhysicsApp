@@ -10,11 +10,10 @@
 script = ExtResource("1_dwn0b")
 
 [node name="ZoomCamera2D" parent="." instance=ExtResource("3_rljco")]
-MinZoom = 0.001
-MaxZoom = 10.0
+MinZoom = 0.1
+MaxZoom = 5.0
 
 [node name="Coil" parent="." instance=ExtResource("4_eygdv")]
-position = Vector2(540, 310)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
