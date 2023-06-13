@@ -11,6 +11,7 @@ public partial class main : Node2D
 	private double l = 1;
 	private double E = 0;
 	private double I = 1;
+	private double mag = 1;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -25,6 +26,7 @@ public partial class main : Node2D
 		GetNode<coil>("Coil").Windings = windings;
 
 		updateL();
+		updateMag();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,6 +39,7 @@ public partial class main : Node2D
 		windings = (int) value;
 		GetNode<coil>("Coil").Windings = windings;
 		updateL();
+		updateMag();
 	}
 
 	private void OnDiamaterChanged(double value)
@@ -50,6 +53,7 @@ public partial class main : Node2D
 	{
 		I = value;
 		updateE();
+		updateMag();
 	}
 
 	private void OnMaterialChanged(double value)
@@ -57,6 +61,7 @@ public partial class main : Node2D
 		materialConstant = value;
 		GetNode<value_display>("CanvasLayer/Induction").Value = materialConstant;
 		updateL();
+		updateMag();
 	}
 
 	private void OnLengthChanged(double value)
@@ -64,6 +69,7 @@ public partial class main : Node2D
 		length = value;
 		GetNode<coil>("Coil").Size = new Vector2((float) length * 1000, GetNode<coil>("Coil").Size.Y);
 		updateL();
+		updateMag();
 	}
 
 	private void updateL()
@@ -80,5 +86,11 @@ public partial class main : Node2D
 		GetNode<value_display>("CanvasLayer/FieldStrength").Value = E;
 
 		GetNode<coil>("Coil").FieldLines = windings > 0 ? (int) Mathf.Lerp(1, 20, Mathf.Min(E / 20, 1)) : 0;
+	}
+
+	private void updateMag()
+	{
+		mag = materialConstant * uniConstant * I * (windings * length);
+		GetNode<value_display>("CanvasLayer/Magnetism").Value = mag;
 	}
 }
