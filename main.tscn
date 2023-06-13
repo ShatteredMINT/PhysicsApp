@@ -45,7 +45,7 @@ offset_right = -10.0
 offset_bottom = -95.0
 grow_horizontal = 0
 grow_vertical = 0
-Title = "Durchmesser"
+Title = "Durchmesser (m)"
 MaxValue = 0.25
 Value = 0.1
 Step = 0.001
@@ -62,7 +62,7 @@ offset_right = -10.0
 offset_bottom = -183.0
 grow_horizontal = 0
 grow_vertical = 0
-Title = "Strom"
+Title = "Strom (A)"
 MaxValue = 10.0
 Value = 1.0
 Step = 0.01
@@ -79,7 +79,7 @@ offset_right = -10.0
 offset_bottom = -271.0
 grow_horizontal = 0
 grow_vertical = 0
-Title = "Material"
+Title = "Permeabilitätszahl"
 MaxValue = 800000.0
 MinValue = 250.0
 Value = 250.0
@@ -97,7 +97,7 @@ offset_right = -10.0
 offset_bottom = -359.0
 grow_horizontal = 0
 grow_vertical = 0
-Title = "Spulen Länge"
+Title = "Spulen Länge (m)"
 MaxValue = 1.0
 Value = 0.3
 Step = 0.001
@@ -114,7 +114,7 @@ offset_right = -8.0
 offset_bottom = 48.0
 grow_horizontal = 0
 grow_vertical = 1
-Title = "Induktivität"
+Title = "Induktivität (H)"
 
 [node name="FieldStrength" parent="CanvasLayer" instance=ExtResource("5_gra6k")]
 anchors_preset = 1
@@ -128,7 +128,7 @@ offset_right = -10.0
 offset_bottom = 96.0
 grow_horizontal = 0
 grow_vertical = 1
-Title = "Feldstärke"
+Title = "Feldstärke (J)"
 
 [connection signal="ChangedValue" from="CanvasLayer/Windings" to="." method="OnWindingsChanged"]
 [connection signal="ChangedValue" from="CanvasLayer/Diameter" to="." method="OnDiamaterChanged"]
