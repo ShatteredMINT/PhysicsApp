@@ -74,7 +74,7 @@ public partial class main : Node2D
 
 	private void updateL()
 	{
-		l = materialConstant * uniConstant * ((windings * windings) / length) * (0.5 * Mathf.Pi * ((diameter / 2) * (diameter / 2)));
+		l = materialConstant * uniConstant * ((windings * windings) / length) * (Mathf.Pi * ((diameter / 2) * (diameter / 2)));
 		GetNode<value_display>("CanvasLayer/Induction").Value = l;
 
 		updateE();

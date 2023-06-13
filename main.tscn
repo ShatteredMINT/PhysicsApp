@@ -128,7 +128,7 @@ offset_right = -10.0
 offset_bottom = 96.0
 grow_horizontal = 0
 grow_vertical = 1
-Title = "Feldstärke (J)"
+Title = "Feldenergie (J)"
 
 [node name="Magnetism" parent="CanvasLayer" instance=ExtResource("5_gra6k")]
 anchors_preset = 1
